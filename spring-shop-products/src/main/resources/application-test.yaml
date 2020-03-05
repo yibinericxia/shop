@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/test
+    username: root
+    password: mysqlproject
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    
+  kafka:
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    topic:
+      product_creation: product-creation-event
+      product_update: product-update-event
+      product_deletion: product-deletion-event
+    consumer:
+      group-id: user-service-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serialiizer: org.apache.kafka.common.serialization.StringSerializer
+      
+test:
+  mode:
+    rest_only: true  

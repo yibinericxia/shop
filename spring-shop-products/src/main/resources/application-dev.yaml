@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  
+spring:
+  datasource:
+    url: 'jdbc:h2:mem:'
+    name: shop
+    platform: h2
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      
+  kafka:
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    topic:
+      product_creation: product-creation-event
+      product_update: product-update-event
+      product_deletion: product-deletion-event
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serialiizer: org.apache.kafka.common.serialization.StringSerializer
+      
+test:
+  mode:
+    rest_only: false

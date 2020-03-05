@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  
+spring:
+  data:
+    mongodb:
+      url: mongodb+srv://admin:<password>@cluster0-mrxr7.mongodb.net/test?retryWrites=true&w=majority
+      database: shop-order
+  kafka:
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    topic:
+      product-creation: product-creation-event
+      product-update: product-update-event
+      product-deletion: product-deletion-event
+      user-creation: user-creation-event
+      user-update: user-update-event
+      user-deletion: user-deletion-event
+      order-creation: order-creation-event
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer 
+    consumer:
+      group-id: shop-service-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-serialiizer: org.apache.kafka.common.serialization.StringDeserializer
+      
+test:
+  mode:
+    rest_only: false

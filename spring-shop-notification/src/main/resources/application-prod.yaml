@@ -1,0 +1,27 @@
+server:
+  port: 8083
+  
+mail:
+  host: smtp.company.com
+  protocol: smtp
+  port: 587
+  username: username@company.com
+  password: password
+  smtp:
+    auth: true
+    starttls.enable: true
+    
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    topic:
+      user-creation: user-creation-event
+      order-creation: order-creation-event
+    consumer:
+      group-id: shop-notification-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-serialiizer: org.apache.kafka.common.serialization.StringDeserializer
