@@ -17,7 +17,7 @@ public class Order {
 	@Id
 	private String id;
 	private User user;
-	@NotNull(message = "products nust not be null")
+	@NotNull(message = "products must not be null")
 	@NotEmpty
 	private List<OrderedProduct> orderedProducts;
 	private LocalDateTime createdTime;
