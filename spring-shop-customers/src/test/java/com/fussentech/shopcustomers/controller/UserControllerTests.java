@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import com.fussentech.shopcustomers.controller.UserController;
 import com.fussentech.shopcustomers.model.User;
 import com.fussentech.shopcustomers.service.UserService;
 

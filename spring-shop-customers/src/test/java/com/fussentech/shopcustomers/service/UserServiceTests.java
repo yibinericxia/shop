@@ -25,7 +25,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fussentech.shopcustomers.model.User;
-import com.fussentech.shopcustomers.service.UserService;
 
 @WebMvcTest
 public class UserServiceTests {

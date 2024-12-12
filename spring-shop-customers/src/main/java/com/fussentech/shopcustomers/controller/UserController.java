@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -25,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fussentech.shopcustomers.exception.UserException;
 import com.fussentech.shopcustomers.model.User;
 import com.fussentech.shopcustomers.service.UserService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
